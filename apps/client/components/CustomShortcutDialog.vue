@@ -4,8 +4,8 @@
     @close="handleCloseDialog"
   >
     <UContainer>
-      <h3 class="mb-4 text-center text-base font-bold">
-        请先按下单键/组合键，通过回车键（Enter ⏎）来设置
+      <h3 class="mb-4 text-center text-base font-bold" dir="rtl">
+        اضغط على المفتاح أو تركيبة المفاتيح ثم اضغط (Enter ⏎) للحفظ
       </h3>
       <div class="h-8 rounded border border-solid text-center leading-8">
         {{ shortcutKeyStr }}
@@ -19,10 +19,10 @@
       </div>
       <div
         v-if="hasSameShortcutKey"
-        class="mt-4 text-center text-xs"
-        :class="'text-[rgba(136,136,136,1)]'"
+        class="mt-4 text-center text-xs text-red-500"
+        dir="rtl"
       >
-        已有相同的按键绑定，请重新设置
+        هذا الاختصار مستخدم بالفعل، يرجى اختيار مفتاح آخر
       </div>
     </UContainer>
   </UModal>

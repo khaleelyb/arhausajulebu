@@ -21,6 +21,6 @@
   "dependencies": {
     "drizzle-orm": "^0.32.0",
     "postgres": "^3.4.4",
-    "@earthworm/schema": "workspace:^"
+    "@earthworm/schema": "*"
   }
 }

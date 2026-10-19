@@ -11,8 +11,8 @@
     "test": "vitest"
   },
   "dependencies": {
-    "@earthworm/db": "workspace:^",
-    "@earthworm/schema": "workspace:^",
+    "@earthworm/db": "*",
+    "@earthworm/schema": "*",
     "drizzle-orm": "^0.32.0",
     "inquirer": "^9.2.13",
     "pdf-parse": "^1.1.1"

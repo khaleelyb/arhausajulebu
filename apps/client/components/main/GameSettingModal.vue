@@ -7,22 +7,22 @@
       }"
     >
       <CommonModalHeader
-        title="游戏设置"
+        title="إعدادات الصوت والتمرين"
         @close="closeGameSettingModal"
       />
-      <div class="mt-6 px-4">
+      <div class="mt-6 px-4" dir="rtl">
         <div class="flex flex-col space-y-4">
           <template
             v-for="option in TOOLBAR_LIST"
             :key="option.key"
           >
             <div class="flex items-center justify-between">
-              <span class="mr-2 text-sm font-medium dark:text-gray-200">{{ option.label }}：</span>
+              <span class="mr-2 text-sm font-medium dark:text-gray-200">{{ option.label }}:</span>
               <USelect
                 v-model="toolBarData[option.key]"
                 :options="option.options"
                 size="sm"
-                class="w-32"
+                class="w-32 text-left"
               />
             </div>
           </template>
@@ -33,7 +33,7 @@
             color="primary"
             variant="solid"
           >
-            重置
+            إعادة تعيين
           </UButton>
         </div>
       </div>
@@ -65,7 +65,7 @@ function handleReset() {
 
 const TOOLBAR_LIST = [
   {
-    label: "倍速",
+    label: "سرعة الصوت",
     key: "rate",
     options: [
       {
@@ -87,7 +87,7 @@ const TOOLBAR_LIST = [
     ],
   },
   {
-    label: "播放次数",
+    label: "عدد مرات التكرار",
     key: "times",
     options: [
       {
@@ -109,7 +109,7 @@ const TOOLBAR_LIST = [
     ],
   },
   {
-    label: "播放间隔",
+    label: "الفاصل الزمني",
     key: "interval",
     options: [
       {

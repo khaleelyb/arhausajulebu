@@ -7,7 +7,7 @@
         @click="goToPreviousQuestion"
       >
         <UTooltip
-          text="上一题"
+          text="السابق"
           :shortcuts="parseShortcut(shortcutKeys.previous)"
         >
           <UIcon
@@ -25,7 +25,7 @@
         @click="goToNextQuestion"
       >
         <UTooltip
-          text="下一题"
+          text="التالي"
           :shortcuts="parseShortcut(shortcutKeys.skip)"
         >
           <UIcon
@@ -51,8 +51,8 @@ const { goToNextQuestion, goToPreviousQuestion } = usePrevAndNextQuestion(
   shortcutKeys.value.skip,
 );
 
-const PREV_BTN_TIP = `上一题 (${shortcutKeys.value.previous})`;
-const NEXT_BTN_TIP = `下一题 (${shortcutKeys.value.skip})`;
+const PREV_BTN_TIP = `السابق (${shortcutKeys.value.previous})`;
+const NEXT_BTN_TIP = `التالي (${shortcutKeys.value.skip})`;
 
 const { showQuestion } = useGameMode();
 const courseStore = useCourseStore();

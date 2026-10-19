@@ -42,15 +42,15 @@ export const useRanking = defineStore("ranking", () => {
   const rankingSelf = ref<RankingSelf | null>(null);
   const rankingPeriodList = [
     {
-      label: "周排行",
+      label: "أسبوعي (Weekly)",
       value: "weekly",
     },
     {
-      label: "月排行",
+      label: "شهري (Monthly)",
       value: "monthly",
     },
     {
-      label: "年排行",
+      label: "سنوي (Yearly)",
       value: "yearly",
     },
   ];

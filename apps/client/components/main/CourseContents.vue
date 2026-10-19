@@ -7,7 +7,7 @@
       }"
     >
       <CommonModalHeader
-        title="课程目录"
+        title="فهرس جمل ومفردات الدرس"
         @close="hideCourseContents"
       />
       <!-- 添加选项菜单 -->
@@ -45,6 +45,7 @@
                 {{ item.english }}
               </div>
               <div
+                dir="rtl"
                 class="truncate text-lg text-purple-600 group-hover:text-clip group-hover:whitespace-normal dark:text-purple-300"
               >
                 {{ item.chinese }}
@@ -59,7 +60,7 @@
               @click=""
               class="flex w-11 flex-shrink-0 cursor-pointer items-center justify-center transition-transform duration-300 hover:scale-110"
             >
-              <UTooltip text="播放发音">
+              <UTooltip text="استمع للنطق">
                 <UIcon
                   name="i-ph-speaker-simple-high"
                   class="ml-1 inline-block h-7 w-7 cursor-pointer"
@@ -91,11 +92,11 @@ const contentsList = computed(() => {
   return coursesStore.currentCourse?.statements || [];
 });
 
-const filterOption = ref("all"); // 新增过滤选项
+const filterOption = ref("all");
 const options = [
-  { label: "全部", value: "all" },
-  { label: "已经掌握", value: "mastered" },
-  { label: "未掌握", value: "notMastered" },
+  { label: "الكل (All)", value: "all" },
+  { label: "تم إتقانها (Mastered)", value: "mastered" },
+  { label: "قيد الممارسة (To Practice)", value: "notMastered" },
 ];
 const filteredContentsList = computed(() => {
   if (filterOption.value === "mastered") {

@@ -8,20 +8,22 @@ import { setupAuth } from "~/services/auth";
 export default defineNuxtPlugin((nuxtApp) => {
   const runtimeConfig = useRuntimeConfig();
 
-  const config: LogtoConfig = {
-    endpoint: runtimeConfig.public.endpoint,
-    appId: runtimeConfig.public.appId,
+  if (runtimeConfig.public.endpoint && runtimeConfig.public.appId) {
+    const config: LogtoConfig = {
+      endpoint: runtimeConfig.public.endpoint,
+      appId: runtimeConfig.public.appId,
 
-    scopes: [
-      UserScope.Email,
-      UserScope.Phone,
-      UserScope.CustomData,
-      UserScope.Identities,
-      UserScope.Organizations,
-    ],
-    resources: [runtimeConfig.public.backendEndpoint],
-  };
+      scopes: [
+        UserScope.Email,
+        UserScope.Phone,
+        UserScope.CustomData,
+        UserScope.Identities,
+        UserScope.Organizations,
+      ],
+      resources: [runtimeConfig.public.backendEndpoint],
+    };
 
-  nuxtApp.vueApp.use(createLogto, config);
+    nuxtApp.vueApp.use(createLogto, config);
+  }
   setupAuth();
 });

@@ -1,34 +1,70 @@
 import { useLogto } from "@logto/vue";
 import { useRuntimeConfig } from "nuxt/app";
 
-let logto: ReturnType<typeof useLogto>;
+let logto: ReturnType<typeof useLogto> | null = null;
 let runtimeConfig: ReturnType<typeof useRuntimeConfig>;
+
 export async function setupAuth() {
-  logto = useLogto();
   runtimeConfig = useRuntimeConfig();
+  if (runtimeConfig.public.endpoint && runtimeConfig.public.appId) {
+    try {
+      logto = useLogto();
+    } catch {
+      logto = null;
+    }
+  }
 }
 
 export async function signIn(callback?: string) {
   callback && setSignInCallback(callback);
-  logto.signIn(runtimeConfig.public.signInRedirectURI);
+  if (logto) {
+    logto.signIn(runtimeConfig.public.signInRedirectURI);
+  } else {
+    if (typeof window !== "undefined") {
+      localStorage.setItem("earthworm_auth", "true");
+      window.location.reload();
+    }
+  }
 }
 
 export function signOut() {
-  return logto.signOut(runtimeConfig.public.signOutRedirectURI);
+  if (logto) {
+    return logto.signOut(runtimeConfig.public.signOutRedirectURI);
+  } else {
+    if (typeof window !== "undefined") {
+      localStorage.removeItem("earthworm_auth");
+      window.location.reload();
+    }
+  }
 }
 
 export function isAuthenticated() {
-  return logto.isAuthenticated.value;
+  if (logto) {
+    return logto.isAuthenticated.value;
+  }
+  if (typeof window !== "undefined") {
+    return localStorage.getItem("earthworm_auth") === "true";
+  }
+  return false;
 }
 
 export async function getToken() {
-  const accessToken = await logto.getAccessToken(runtimeConfig.public.backendEndpoint);
-
-  return accessToken;
+  if (logto) {
+    const accessToken = await logto.getAccessToken(runtimeConfig.public.backendEndpoint);
+    return accessToken;
+  }
+  return "mock-token";
 }
 
 export function fetchUserInfo() {
-  return logto.fetchUserInfo();
+  if (logto) {
+    return logto.fetchUserInfo();
+  }
+  return Promise.resolve({
+    sub: "earthworm_guest",
+    name: "Earthworm Learner",
+    picture: "/logo.png",
+  });
 }
 
 export function getSignInCallback() {

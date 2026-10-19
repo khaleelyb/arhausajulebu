@@ -45,14 +45,14 @@ const keybindings = computed(() => {
   const questionItems = [
     {
       keys: "Enter",
-      text: "提交",
+      text: "إرسال",
       eventFn: () => {
         submitAnswer();
       },
     },
     {
       keys: shortcutKeys.value.answer,
-      text: isAnswerTip() ? "隐藏答案" : "显示答案",
+      text: isAnswerTip() ? "إخفاء التلميح" : "إظهار الإجابة",
       eventFn: () => {
         toggleAnswerTip();
       },
@@ -62,14 +62,14 @@ const keybindings = computed(() => {
   const answerItems = [
     {
       keys: "Enter",
-      text: "下一题",
+      text: "التالي",
       eventFn: () => {
         goToNextQuestion();
       },
     },
     {
       keys: shortcutKeys.value.answer,
-      text: "再来一次",
+      text: "إعادة",
       eventFn: () => {
         showQuestion();
       },
@@ -79,12 +79,12 @@ const keybindings = computed(() => {
   const normalItems = [
     {
       keys: shortcutKeys.value.sound,
-      text: "播放发音",
+      text: "نطق صوتي",
       eventFn: playSound,
     },
     {
       keys: shortcutKeys.value.mastered,
-      text: "掌握",
+      text: "أتقنتُها",
       eventFn: handleMastered,
     },
   ];

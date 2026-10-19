@@ -9,8 +9,8 @@
         constrained: 'max-w-[780px]',
       }"
     >
-      <div class="flex justify-between">
-        <h3 className="font-bold text-lg mb-4">🎉 恭喜!</h3>
+      <div class="flex justify-between" dir="rtl">
+        <h3 className="font-bold text-lg mb-4">🎉 أحسنت! أكملت الدرس بنجاح</h3>
         <button
           tabindex="0"
           class="btn btn-ghost btn-sm mx-1 h-7 w-7 rounded-md p-0"
@@ -26,7 +26,7 @@
       <div class="flex flex-col">
         <div class="flex">
           <span class="text-3xl font-bold sm:text-4xl lg:text-6xl">"</span>
-          <div class="flex-1 text-center text-sm leading-loose sm:text-base lg:text-xl">
+          <div class="flex-1 text-center text-sm leading-loose sm:text-base lg:text-xl font-medium">
             {{ enSentence }}
           </div>
           <span class="invisible text-3xl font-bold sm:text-4xl lg:text-6xl">"</span>
@@ -34,53 +34,55 @@
 
         <div class="flex">
           <span class="invisible text-3xl font-bold sm:text-4xl lg:text-6xl">"</span>
-          <div class="flex-1 text-center text-sm leading-loose sm:text-base lg:text-xl">
+          <div class="flex-1 text-center text-sm leading-loose sm:text-base lg:text-xl text-purple-600 dark:text-purple-300" dir="rtl">
             {{ zhSentence }}
           </div>
           <span class="text-3xl font-bold sm:text-4xl lg:text-6xl">"</span>
         </div>
-        <p class="text-right text-xs text-gray-200 sm:text-sm">—— 金山词霸「每日一句」</p>
+        <p class="text-right text-xs text-gray-400 sm:text-sm" dir="rtl">—— اقتباس اليوم الملهم</p>
         <p
-          class="pl-2 text-xs leading-loose text-gray-600 sm:pl-4 sm:text-sm lg:pl-14 lg:text-base"
+          class="pl-2 text-xs leading-loose text-gray-600 dark:text-gray-300 sm:pl-4 sm:text-sm lg:pl-14 lg:text-base"
+          dir="rtl"
         >
           {{
-            `恭喜您一共完成 ${courseTimer.totalRecordNumber()} 道题，用时 ${formatSecondsToTime(
+            `تهانينا! لقد أتممت ${courseTimer.totalRecordNumber()} عبارة في وقت قدره ${formatSecondsToTime(
               courseTimer.calculateTotalTime(),
-            )} `
+            )}`
           }}
         </p>
         <p
           v-if="isAuthenticated()"
           class="pl-2 text-xs leading-loose text-gray-400 sm:pl-4 sm:text-sm lg:pl-14 lg:text-base"
+          dir="rtl"
         >
-          今天一共学习 <span class="text-purple-500">{{ formattedMinutes }}分钟</span> 啦！
-          <span v-if="totalMinutes >= 30">太强了，给自己来点掌声 😄</span>
+          مجموع وقت تعلمك اليوم <span class="text-purple-500 font-bold">{{ formattedMinutes }} دقيقة</span>!
+          <span v-if="totalMinutes >= 30"> أداء رائع جداً، واصل التقدم 👏</span>
         </p>
       </div>
       <div className="modal-action flex flex-col sm:flex-row gap-2 justify-center sm:justify-end">
         <button
-          class="btn btn-primary w-full sm:w-auto"
+          class="btn btn-outline w-full sm:w-auto"
           @click="toShare"
         >
-          生成打卡图
+          مشاركة الإنجاز
         </button>
         <button
           class="btn w-full sm:w-auto"
           @click="handleDoAgain"
         >
-          再来一次
+          إعادة الدرس
         </button>
         <button
           class="btn w-full sm:w-auto"
           @click="handleGoToCourseList"
         >
-          课程列表
+          قائمة الدروس
         </button>
         <button
-          class="btn w-full sm:w-auto"
+          class="btn btn-primary w-full sm:w-auto"
           @click="goToNextCourse"
         >
-          下一课
+          الدرس التالي
           <UKbd> ↵ </UKbd>
         </button>
       </div>

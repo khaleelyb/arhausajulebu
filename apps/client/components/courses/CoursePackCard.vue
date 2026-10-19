@@ -12,7 +12,7 @@
         class="inset-0 h-full w-full object-cover"
       />
     </figure>
-    <div class="card-body">
+    <div class="card-body" dir="rtl">
       <h2 class="card-title truncate">{{ coursePack.title }}</h2>
       <p
         class="description-text"

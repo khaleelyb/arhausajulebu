@@ -84,43 +84,25 @@ const modal = useModal();
 const showMenuOptions = computed(() => {
   return [
     {
-      title: "设置",
+      title: "الإعدادات",
       name: "setting",
       eventName: handleSetting,
       icon: "i-ph-gear",
     },
     {
-      title: "掌握列表",
-      name: "setting",
+      title: "قائمة الكلمات المتقنة",
+      name: "mastered",
       eventName: handleMasteredElements,
       icon: "i-ph-book",
     },
     {
-      title: "编辑器",
-      name: "setting",
-      eventName: handleGoToEditor,
-      icon: "i-ph-planet-duotone",
-    },
-    {
-      title: "帮助文档",
-      name: "helpDocs",
-      eventName: handleHelpDocs,
-      icon: "i-ph-book-open-text-duotone",
-    },
-    {
-      title: "建议反馈",
-      name: "feedback",
-      eventName: handleFeedback,
-      icon: "i-ph-hands-praying-duotone",
-    },
-    {
-      title: "主题切换",
+      title: "تبديل المظهر (فاتح / داكن)",
       name: "changeTheme",
       eventName: toggleDarkMode,
       icon: isDarkMode.value ? "i-ph-moon" : "i-ph-sun",
     },
     {
-      title: "登出",
+      title: "تسجيل الخروج",
       name: "logout",
       eventName: handleLogout,
       icon: "i-ph-sign-out",
@@ -130,12 +112,13 @@ const showMenuOptions = computed(() => {
 
 function handleHelpDocs() {
   closeUserMenu();
-  window.open(runtimeConfig.public.helpDocsURL, "_blank");
+  if (runtimeConfig.public.helpDocsURL) {
+    window.open(runtimeConfig.public.helpDocsURL, "_blank");
+  }
 }
 
 function handleFeedback() {
   closeUserMenu();
-  window.open("https://txc.qq.com/products/652508", "_blank");
 }
 
 function handleMasteredElements() {
@@ -152,10 +135,12 @@ function handleLogout() {
   closeUserMenu();
 
   modal.open(Dialog, {
-    title: "退出登录",
-    content: "是否确认退出登录？",
+    title: "تسجيل الخروج",
+    content: "هل أنت متأكد من رغبتك في تسجيل الخروج؟",
     showCancel: true,
     showConfirm: true,
+    cancelText: "إلغاء",
+    confirmText: "تأكيد",
     async onConfirm() {
       signOut();
     },

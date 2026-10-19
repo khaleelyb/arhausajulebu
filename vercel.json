@@ -1,0 +1,6 @@
+{
+  "version": 2,
+  "framework": "nuxtjs",
+  "buildCommand": "npm run build --workspace=client",
+  "outputDirectory": "apps/client/.output"
+}

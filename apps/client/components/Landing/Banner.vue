@@ -6,35 +6,34 @@
     <div class="mx-auto my-5 text-center">
       <h2
         class="bg-gradient-to-r from-purple-600 to-gray-200 bg-clip-text text-3xl font-extrabold tracking-tight text-transparent dark:from-purple-600 dark:to-gray-100 lg:text-4xl xl:text-5xl"
+        dir="rtl"
       >
-        让你上瘾的英语学习工具
+        أقوى وسيلة تفاعلية لإتقان اللغة الإنجليزية
       </h2>
 
-      <div class="mt-5 text-sm md:text-base xl:text-lg">
+      <div class="mt-5 text-sm md:text-base xl:text-lg" dir="rtl">
         <p class="pt-2 text-center text-gray-500 dark:text-gray-300 lg:text-xl">
-          使用<span class="text-purple-400 dark:text-purple-200"> 连词成句 </span>、<span
+          تعلم عبر <span class="text-purple-400 dark:text-purple-200"> تركيب الجمل والعبارات </span> و <span
             class="text-purple-400 dark:text-purple-200"
           >
-            i + 1 </span
-          >、<span class="text-purple-400 dark:text-purple-200"> 以终为始 </span
-          >等学习理论来帮助你习得英语
+            التكرار المتباعد الذكي </span
+          > لاكتساب الإنجليزية بطريقة طبيعية
         </p>
         <p class="pt-2 text-center text-gray-500 dark:text-gray-300 lg:text-xl">
-          通过不断的<span class="text-purple-400 dark:text-purple-200"> 重复 </span>形成肌肉记忆
+          ابنِ ذاكرة عضلية في <span class="text-purple-400 dark:text-purple-200"> الكتابة والنطق الصحيح </span> عبر الممارسة اليومية
         </p>
         <p class="pt-2 text-center text-gray-500 dark:text-gray-300 lg:text-xl">
-          最重要的是<span class="text-purple-400 dark:text-purple-200"> 游戏化 </span
-          >的形式让学习英语从此不再痛苦
+          تجربة <span class="text-purple-400 dark:text-purple-200"> تفاعلية ممتعة </span> تجعل تعلم الإنجليزية سهلاً وبدون ملل
         </p>
       </div>
     </div>
     <div class="my-10 flex flex-wrap items-center justify-center gap-4 font-customFont">
       <button
         @click="handleKeydown"
-        class="btn relative"
+        class="btn relative px-8"
         type="button"
       >
-        <strong>开启Earthworm</strong>
+        <strong>ابدأ التعلم الآن</strong>
         <div id="container-stars">
           <div id="stars"></div>
         </div>

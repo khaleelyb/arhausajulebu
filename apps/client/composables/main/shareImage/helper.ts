@@ -1,4 +1,4 @@
-import SourceHanSerifSCBold from "~/assets/font/SourceHanSerif/SourceHanSerifSC-Bold.otf";
+import SourceHanSerifSCBold from "~/assets/font/Nunito/Nunito-Bold.ttf";
 import { fontFetch } from "~/utils/fontLoader";
 
 const loadImage = async (url: string): Promise<HTMLImageElement> => {

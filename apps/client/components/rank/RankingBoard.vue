@@ -7,7 +7,7 @@
       }"
     >
       <CommonModalHeader
-        title="排行榜"
+        title="لوحة المتصدرين (Leaderboard)"
         @close="rankingStore.hideRankModal"
       />
 
@@ -46,9 +46,10 @@
           <!-- empty -->
           <div
             v-else
-            class="flex flex-1 items-center justify-center text-gray-500"
+            class="flex flex-1 items-center justify-center text-gray-500 text-center p-4"
+            dir="rtl"
           >
-            还没有小伙伴上榜哦，快来霸榜吧！🏆
+            لا توجد بيانات مسجلة بعد، ابدأ التعلم لتتصدر القائمة! 🏆
           </div>
         </template>
       </div>

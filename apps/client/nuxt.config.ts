@@ -18,17 +18,30 @@ function addClarity() {
 
 export default defineNuxtConfig({
   ssr: false,
-  // default is true, reference to https://nuxt.com/docs/guide/directory-structure/components
-  // components: true,
+  devServer: {
+    host: "0.0.0.0",
+    port: 3000,
+  },
+  nitro: {
+    preset: process.env.VERCEL ? "vercel" : "node-server",
+  },
   imports: {
     autoImport: false,
   },
   devtools: {
-    enabled: true,
+    enabled: false,
   },
   app: {
     head: {
-      title: "Earthworm",
+      title: "Earthworm - تعلم اللغة الإنجليزية للمتحدثين بالعربية",
+      meta: [
+        { charset: "utf-8" },
+        { name: "viewport", content: "width=device-width, initial-scale=1" },
+        {
+          name: "description",
+          content: "تطبيق تفاعلي ذكي لتعلم اللغة الإنجليزية من خلال التدريب على الكتابة والتكرار المتباعد للمتحدثين بالعربية",
+        },
+      ],
       link: [{ rel: "icon", href: "/favicon.ico" }],
       script: appScripts,
     },
@@ -45,6 +58,8 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       apiBase: process.env.API_BASE || "",
+      supabaseUrl: process.env.SUPABASE_URL || "",
+      supabaseKey: process.env.SUPABASE_ANON_KEY || "",
       endpoint: process.env.LOGTO_ENDPOINT || "",
       appId: process.env.LOGTO_APP_ID || "",
       backendEndpoint: process.env.BACKEND_ENDPOINT || "",

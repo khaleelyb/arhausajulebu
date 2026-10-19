@@ -17,7 +17,7 @@
     <div class="my-6 text-xl text-gray-500">
       {{ courseStore.currentStatement?.soundmark }}
     </div>
-    <div class="my-6 text-xl text-gray-500">
+    <div class="my-6 text-xl text-gray-500 font-medium" dir="rtl">
       {{ courseStore.currentStatement?.chinese }}
     </div>
     <div class="space-y-3">
@@ -26,13 +26,13 @@
           class="btn btn-outline btn-sm"
           @click="showQuestion"
         >
-          再来一次
+          إعادة (Again)
         </button>
         <button
-          class="btn btn-outline btn-sm ml-6"
+          class="btn btn-primary btn-sm ml-4"
           @click="goToNextQuestion"
         >
-          下一题
+          التالي (Next)
         </button>
       </div>
       <div class="md:hidden">

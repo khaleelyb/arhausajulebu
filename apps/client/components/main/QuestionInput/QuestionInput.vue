@@ -41,20 +41,20 @@
         class="btn btn-outline btn-sm"
         @click="handleSubmitAnswer"
       >
-        提交
+        إرسال الإجابة
       </button>
       <div class="flex gap-4">
         <button
           class="btn btn-outline btn-sm"
           @click="handleShowAnswerTip"
         >
-          {{ isAnswerTip() ? "隐藏" : "显示" }}答案
+          {{ isAnswerTip() ? "إخفاء" : "إظهار" }} التلميح
         </button>
         <button
           class="btn btn-outline btn-sm"
           @click="handlePlaySound"
         >
-          播放声音
+          استمع للصوت
         </button>
       </div>
       <MainMasteredBtn></MainMasteredBtn>

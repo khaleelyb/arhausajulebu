@@ -12,12 +12,13 @@
       },
     ]"
   >
-    <h3 class="text-base font-bold">
+    <h3 class="text-base font-bold" dir="rtl">
       {{ title }}
     </h3>
     <p
       class="mt-4 line-clamp-3 text-sm text-gray-500 dark:text-gray-400"
       :title="description"
+      dir="rtl"
     >
       {{ description }}
     </p>
@@ -55,7 +56,7 @@ const { activeCourseMap } = useActiveCourseMap();
 const activeCourseRef = ref<HTMLDivElement>();
 const hasFinished = computed(() => !!props.count);
 const isActiveCourse = computed(() => activeCourseMap.value[props.coursePackId] == props.id);
-const dataTip = computed(() => `恭喜您，当前课程已完成 ${props.count} 次 🎉`);
+const dataTip = computed(() => `تهانينا! لقد أتممت هذا الدرس ${props.count} مرة 🎉`);
 
 onMounted(() => {
   activeCourseRef.value?.scrollIntoView({

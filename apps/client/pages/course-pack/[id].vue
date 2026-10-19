@@ -5,7 +5,7 @@
     </template>
 
     <template v-else>
-      <h2 class="mb-4 text-center text-3xl dark:border-gray-600">
+      <h2 class="mb-4 text-center text-3xl font-bold dark:border-gray-600" dir="rtl">
         {{ coursePackStore.currentCoursePack?.title }}
       </h2>
       <div class="h-full scrollbar-hide">

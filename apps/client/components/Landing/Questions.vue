@@ -4,10 +4,10 @@
     id="faq"
   >
     <CommonTitle
-      title="常见问题解答"
-      :description="[`如果您找不到所需的内容，请加入 Telegram 群组`, `我们会尽快回复您！`]"
+      title="الأسئلة الشائعة"
+      :description="['إجابات على أكثر الأسئلة شيوعاً حول كيفية استخدام التطبيق والاستفادة القصوى منه']"
     />
-    <div class="divide-y divide-gray-100 py-16 dark:divide-gray-800">
+    <div class="divide-y divide-gray-100 py-16 dark:divide-gray-800" dir="rtl">
       <template
         v-for="(qsItem, qsIndex) in QUESTIONS"
         :key="qsIndex"
@@ -21,18 +21,18 @@
               {{ qsItem.title }}
             </h2>
             <UIcon
-              name="i-ph-caret-right-bold"
-              class="icon h-6 w-6"
+              name="i-ph-caret-left-bold"
+              class="icon h-6 w-6 text-purple-500"
             ></UIcon>
           </summary>
           <div
-            class="transition-max-height mb-4 overflow-hidden duration-500 ease-in-out dark:text-gray-500"
+            class="transition-max-height mb-4 overflow-hidden duration-500 ease-in-out dark:text-gray-400"
           >
             <template
               v-for="(asItem, asIndex) in qsItem.content"
               :key="`content-${asIndex}`"
             >
-              <p class="py-2 text-sm lg:text-base">
+              <p class="py-2 text-sm lg:text-base leading-relaxed">
                 <span v-if="qsItem.content.length > 1">{{ asIndex + 1 }}. </span>
                 {{ asItem }}
               </p>
@@ -48,29 +48,29 @@
 <script setup lang="ts">
 const QUESTIONS = [
   {
-    title: "如何向开发团队提出更多的功能需求？",
+    title: "كيف يساعدني التطبيق على التحدث بالإنجليزية بطلاقة؟",
     content: [
-      "可以加入我们官方 Telegram 群组, 详细的描述您想要的功能以及告知这个功能想要解决的问题是什么",
-      "也可以去 github/issues 来提交您想要的功能需求",
+      "يعتمد Earthworm على أسلوب الترجمة التفاعلية وبناء الجمل الكاملة بدلاً من مجرد حفظ كلمات منفصلة. تكرار كتابة الجمل والاستماع إليها يبني في ذهنك وعضلات أصابعك ردود فعل سريعة للتحدث والتعبير.",
     ],
   },
   {
-    title: "如何向开发团队报告我在应用中遇到的错误或漏洞？",
+    title: "هل التطبيق مناسب للمبتدئين من الصفر؟",
     content: [
-      "如果您在应用中发现了错误或漏洞，可以加入我们官方 Telegram 群组，提供详细的描述和重现问题的步骤，当然最好提供一个小视频 🤪",
+      "نعم، صُممت الدروس من مستوى الصفر المطلق مع الضمائر والأفعال البسيطة، ثم تتدرج تدريجياً وبطريقة ذكية بدون أي تعقيد أو مصطلحات قواعد مبهمة.",
     ],
   },
   {
-    title: "如何为 Earthworm 贡献代码？",
+    title: "كيف يتم تخزين تقدمي التعليمي؟",
     content: [
-      "我们提供了完整的贡献代码指南，可以先读一读(页脚处有链接)",
-      "去 github/issues 逛一逛， 也可以基于你在使用中遇到的问题提一个 issue 并且自己尝试修复",
+      "يدعم التطبيق التخزين السحابي الآمن عبر Supabase، مما يحفظ درجاتك والدروس المكتملة وقائمة الكلمات المتقنة عبر جميع جلساتك.",
     ],
   },
   {
-    title: "Earthworm 项目是完全免费的吗？",
+    title: "ما هي اختصارات لوحة المفاتيح المفيدة أثناء التمرين؟",
     content: [
-      "不完全免费，因为想要长久发展收费是必然的。未来会采用订阅模式，为会员提供更多的学习内容和功能",
+      "مفتاح (Enter ⏎) للانتقال المباشر إلى السؤال أو الدرس التالي.",
+      "مفتاح المسافة (Space) لإعادة الاستماع للنطق الصوتي.",
+      "مفتاح (Esc) لإغلاق النوافذ المنبثقة ولوحة المتصدرين بسرعة.",
     ],
   },
 ];
@@ -82,7 +82,7 @@ const QUESTIONS = [
 }
 
 details[open] .icon {
-  transform: rotate(90deg);
+  transform: rotate(-90deg);
 }
 
 .transition-max-height {

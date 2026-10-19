@@ -14,12 +14,13 @@
             <span class="mt-4 text-3xl">Earthworm</span>
           </div>
 
-          <p class="typing mt-4 max-w-[16rem] text-base leading-relaxed">
-            一起来加入我们
+          <p class="mt-4 max-w-[20rem] text-base leading-relaxed" dir="rtl">
+            انضم إلى مجتمع
             <span
-              class="bg-gradient-to-r from-purple-400 via-purple-400 to-gray-400 bg-clip-text text-transparent dark:from-purple-600 dark:to-gray-100"
+              class="bg-gradient-to-r from-purple-400 via-purple-400 to-gray-400 bg-clip-text text-transparent dark:from-purple-600 dark:to-gray-100 font-bold"
               >Earthworm</span
-            >!
+            >
+            لتعلم الإنجليزية بطلاقة!
           </p>
 
           <ul class="mt-6 flex gap-6 transition">
@@ -63,7 +64,7 @@
           </ul>
         </div>
 
-        <div class="grid grid-cols-1 gap-6 transition sm:grid-cols-2 lg:col-span-2 lg:grid-cols-4">
+        <div class="grid grid-cols-1 gap-6 transition sm:grid-cols-2 lg:col-span-2 lg:grid-cols-4" dir="rtl">
           <div>
             <p class="text-lg font-medium">Earthworm</p>
 
@@ -73,7 +74,7 @@
                   href="https://github.com/cuixueshe/earthworm"
                   class="hover:opacity-80"
                 >
-                  开源
+                  المصدر المفتوح
                 </a>
               </li>
 
@@ -82,7 +83,7 @@
                   href="https://github.com/cuixueshe/earthworm/issues"
                   class="hover:opacity-80"
                 >
-                  问题
+                  المشاكل والدعم
                 </a>
               </li>
 
@@ -91,14 +92,14 @@
                   href="https://github.com/cuixueshe/earthworm/issues/91"
                   class="hover:opacity-80"
                 >
-                  贡献代码
+                  المساهمة في التطوير
                 </a>
               </li>
             </ul>
           </div>
 
           <div>
-            <p class="text-lg font-medium">团队</p>
+            <p class="text-lg font-medium">المجتمع والتواصل</p>
 
             <ul class="mt-6 space-y-4 text-sm">
               <li>
@@ -106,18 +107,9 @@
                   href="https://t.me/+dohhXSz-5n1kZDQ1"
                   class="hover:opacity-80"
                 >
-                  联系我们
+                  تواصل معنا
                 </a>
               </li>
-
-              <!-- <li>
-                <a
-                  href="#faq"
-                  class="transition hover:opacity-75"
-                >
-                  常见问题
-                </a>
-              </li> -->
             </ul>
           </div>
 

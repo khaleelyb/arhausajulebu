@@ -18,7 +18,7 @@
     "vitest": "^2.0.3"
   },
   "dependencies": {
-    "@earthworm/schema": "workspace:^",
+    "@earthworm/schema": "*",
     "drizzle-orm": "^0.32.0",
     "postgres": "^3.4.4"
   }
